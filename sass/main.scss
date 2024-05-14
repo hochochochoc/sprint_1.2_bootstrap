@@ -1,0 +1,281 @@
+
+$primary: #5265E1;
+$secondary: #FA5959;
+$tertiary: #707070;
+$btn-secondary-color: #fff;
+
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+.btn {
+    font-size: small;
+    padding: 0.5rem 0.85rem;
+}
+
+.text-gray {
+    color: $tertiary;
+}
+
+// Navbar
+.navbar-toggler {
+    border: none;
+}
+
+// Parte Principal
+.btn.btn-secondary {
+    color: #fff !important;
+}
+
+// Fondo azul
+@include media-breakpoint-down(md) {
+    .container {
+        position: relative;  
+        width: auto;  
+        height: auto;    
+    }
+    
+    .circle {
+        position: absolute;
+        width: 170px;      
+        height: 170px;     
+        background-color: $primary;
+        border-radius: 50%;
+        z-index: 1;
+        left: calc(50% - 100px);
+        top: 40px;
+
+        &.features-background {
+
+            left: calc(50% - 100px);
+            top: 70px;
+        }
+
+        &.features-background-2 {
+            left: calc(50% - 110px);
+            top: 70px;
+        }
+    }
+
+    .square {
+        position: absolute;
+        width: 200px;      
+        height: 170px;     
+        background-color: $primary;
+        z-index: 2;
+        left: calc(50% - 10px);
+        top: 40px;
+
+        &.features-background {
+            width: 70%;
+            left: -80px;
+            top: 70px;
+        }
+    }
+
+    .img-fluid {
+        position: relative;
+        z-index: 3;
+        top: 0px;
+        left: 0px;
+        width: auto;
+        height: 220px;
+    }
+}
+
+
+@include media-breakpoint-up(md) {
+    .container {
+        position: relative;  
+        width: auto;  
+        height: auto;        
+    }
+    
+    .circle {
+        position: absolute;
+        width: 350px;      
+        height: 350px;     
+        background-color: $primary;
+        border-radius: 50%;
+        z-index: 1;
+        left: calc(50% - 120px);
+        top: 90px;
+
+        &.features-background {
+            top: 140px;
+            left: calc(50% - 100px);
+            
+        }
+
+        &.features-background-2 {
+            left: calc(50% - 150px);
+            top: 140px;
+        }
+    }
+
+    .square {
+        position: absolute;
+        width: 58%;      
+        height: 350px;     
+        background-color: $primary;
+        z-index: 2;
+        left: calc(50% + 50px);
+        top: 90px;
+
+        &.features-background {
+            width: 120%;
+            left: -180px;
+            top: 140px;
+        }
+    }
+
+    .img-fluid {
+        position: relative;
+        z-index: 3;
+        top: 0px;
+        left: 0px;
+        width: auto;
+        height: 400px;
+    }
+}
+
+.nav-tabs {
+    @include media-breakpoint-down(md) { 
+        border-bottom: none !important;
+        display: flex;
+        justify-content: center;
+    }
+
+    @include media-breakpoint-up(md) {
+        width: 600px;
+    }
+}
+
+.nav-item {
+    @include media-breakpoint-up(md) {
+        border-top: none !important;
+        border-bottom: none !important;
+        width: 200px;
+    }
+    
+    @include media-breakpoint-down(md) {
+        flex: 1;
+        text-align: center;
+        width: 100%;
+        margin-left: 0;   
+        margin-right: 0;  
+    
+        &.border-top {
+            border-top: 1px solid $gray-300;
+        }
+    
+        &.border-bottom {
+            border-bottom: 1px solid $gray-300;
+        }
+    }
+
+    .nav-link {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        transition: none !important;
+
+        &:hover {
+            border: none !important;
+        }
+    }
+}
+
+.nav-link.active {
+    position: relative; 
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    background-color: transparent; 
+  
+    @include media-breakpoint-down(md) {
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 0; 
+            left: 0; 
+            right: 0;
+            border-bottom: 1px solid $gray-300; 
+            display: block;
+        }
+    
+        &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 200px;
+        border-bottom: 2px solid red !important;
+        transform: translateX(-50%); 
+        display: block;
+        }
+    }
+
+    @include media-breakpoint-up(md) {        
+        &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 200px;
+        border-bottom: 3px solid red !important;
+        transform: translateX(-50%); 
+        display: block;
+        }
+    }
+}
+
+// Cards
+.card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card-body {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.logo {
+    height: 180px;
+}
+
+// FAQ
+// chevron accordion
+.accordion-button:not(.collapsed)::after {
+    background-image: url('../Imagenes/icon-arrow.svg');
+    background-position: center;
+    transform-origin: center;
+    transform: rotate(180deg);
+}
+
+.accordion-button::after {
+    background-image: url('../Imagenes/icon-arrow.svg');
+    background-position: center;
+    transform-origin: center;
+    transform: rotate(0);
+}
+
+// Footer
+.footer-color {
+    color: white;
+}
+
+.increased-spacing {
+    letter-spacing: 3px;
+}
+
+@include media-breakpoint-down(md) {
+    .contact-us-button {
+        width: 100%;
+    }
+}
+
+@include media-breakpoint-down(sm){
+    .footer-margins {
+        margin-bottom: 20px;
+    }
+}
